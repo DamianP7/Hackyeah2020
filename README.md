@@ -1,2 +1,2 @@
-# Hackyeah2020
-GameJam HackYeah
+# ZostanWDomuRobGry
+Projekt realizowany w ramach GameJamu #ZostanWDomuRobGry
