@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcdcad2a1a1116047ab59c6ca8db2c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinPrefab: {fileID: 3565653485092872460, guid: 8b45a16d667bede4bb22f58bb1acf565,
+    type: 3}
   colliders:
   - {fileID: 249185411572076058}
   eventType: 0

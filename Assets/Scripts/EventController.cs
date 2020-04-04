@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EventController : MonoBehaviour
 {
+    public GameObject coinPrefab;
     public EventControllerCollider[] colliders;
     public EventType eventType;
     public int eventId;
@@ -46,7 +47,11 @@ public class EventController : MonoBehaviour
         {
             man.Walking = true;
         }
-        GameManager.Instance.Points += people.Count;
+        if (people.Count > 0)
+        {
+            GameManager.Instance.Points += people.Count;
+            GameObject.Instantiate(coinPrefab, this.transform.position, Quaternion.identity);
+        }
         CrowdController.Instance.CloseEvent(transform.position);
         Destroy(this.gameObject);
     }
