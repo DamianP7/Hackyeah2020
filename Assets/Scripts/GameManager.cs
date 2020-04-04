@@ -17,6 +17,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	[SerializeField] Text pointsText;
+	[SerializeField] CrowdController crowdController;
 
 	public int Points
 	{
@@ -34,4 +35,8 @@ public class GameManager : MonoBehaviour
 		Points = 0;
 	}
 
+	public void StartGame()
+	{
+		crowdController.gameObject.SetActive(true);
+	}
 }

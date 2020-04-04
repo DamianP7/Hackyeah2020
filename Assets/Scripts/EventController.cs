@@ -49,7 +49,7 @@ public class EventController : MonoBehaviour
         }
         if (people.Count > 0)
         {
-            GameManager.Instance.Points += people.Count;
+            GameManager.Instance.Points += (requiedNumber - people.Count + 1);
             GameObject.Instantiate(coinPrefab, this.transform.position, Quaternion.identity);
         }
         CrowdController.Instance.CloseEvent(transform.position);
