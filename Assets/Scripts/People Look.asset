@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d872f740d952384c8d95999d54f1105, type: 3}
+  m_Name: People Look
+  m_EditorClassIdentifier: 
+  people:
+  - body: {fileID: 3657170799413675112, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 523907573312047627, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 933303178881835478, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 6219003440579763265, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 523907573312047627, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: -9075125957270007806, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: -5662792600067641636, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 523907573312047627, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 3542127132570728493, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 4261722457816353934, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 523907573312047627, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 3485597632836777362, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 7305490789916571938, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 523907573312047627, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 4397737812864955831, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 7480639098082073457, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: -1960546628078278901, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: -2499558952833973110, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 8248543377919322394, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 115972425246325791, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: -479236782097018826, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 57365866442116020, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 1808964706522467271, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: -4791017427084006217, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 2807314771408455767, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 7649489486189614792, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 4769413903677429357, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: -7914586359189542566, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: -9119583415266913145, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 6440628458277568191, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: -7424387843487759793, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 3112702236248781428, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 8902602265628216436, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 651816595902088185, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: -532960962129546369, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 2861855363009835268, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 6716731256078600817, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: -1965401998591550813, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 7192599230480733807, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 8760199315114398310, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: -6685782176977451322, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: -4424300748493377099, guid: af088148637255144bc2e2003bb1af99, type: 3}
+  - body: {fileID: 3554242101514492605, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    arm: {fileID: 6159244442380671589, guid: af088148637255144bc2e2003bb1af99, type: 3}
+    leg: {fileID: 6810973084642349558, guid: af088148637255144bc2e2003bb1af99, type: 3}

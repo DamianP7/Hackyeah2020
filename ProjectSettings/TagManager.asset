@@ -41,6 +41,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 1850402779
+    locked: 0
+  - name: People
+    uniqueID: 2213310919
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

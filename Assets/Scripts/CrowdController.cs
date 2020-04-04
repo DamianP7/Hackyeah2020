@@ -16,6 +16,7 @@ public class CrowdController : MonoBehaviour
 	}
 
 	[Header("People")]
+	public PeopleLook peopleLook;
 	public GameObject[] prefabs;
 	public List<ManControl> people;
 	public float manSize;
@@ -46,11 +47,19 @@ public class CrowdController : MonoBehaviour
 	int eventId = 1;
 	int activeEvents;
 	List<Vector2> eventPositions;
+	List<int> lastIndexes;
+	int index = 0;
 
 	private void Awake()
 	{
 		people = new List<ManControl>();
 		eventPositions = new List<Vector2>();
+		lastIndexes = new List<int>();
+		lastIndexes.Add(100);
+		lastIndexes.Add(100);
+		lastIndexes.Add(100);
+		lastIndexes.Add(100);
+		lastIndexes.Add(100);
 	}
 
 	private void Start()
@@ -83,7 +92,8 @@ public class CrowdController : MonoBehaviour
 
 	void SpawnMan(WalkingDirection direction = WalkingDirection.None, float yPos = -100, int id = 0)
 	{
-		GameObject newObject = GameObject.Instantiate(prefabs[Random.Range(0, prefabs.Length)]);
+		int random = Random.Range(0, prefabs.Length);
+		GameObject newObject = GameObject.Instantiate(prefabs[random]);
 		ManControl newMan = newObject.GetComponent<ManControl>();
 
 		if (direction == WalkingDirection.None)
@@ -111,12 +121,28 @@ public class CrowdController : MonoBehaviour
 
 		newObject.transform.position = spawnVector;
 		newMan.speed += Random.Range(-newMan.speed / 3, newMan.speed / 3);
-		newMan.walking = true;
+		newMan.Walking = true;
 		if (id > 0)
 			newMan.id = id;
 		else
 			newMan.id = manId++;
-		newMan.Initialize(startVector, endVector, direction);
+		int min, max, look;
+		if (random == 1)
+		{
+			min = 0;
+			max = 5;
+		}
+		else
+		{
+			min = 5;
+			max = peopleLook.people.Count;
+		}
+		do
+		{
+			look = Random.Range(min, max);
+		} while (lastIndexes.Contains(look));
+		lastIndexes[index % lastIndexes.Count] = look;
+		newMan.Initialize(startVector, endVector, direction, peopleLook.people[look]);
 	}
 
 	void SpawnEvent()
@@ -165,7 +191,6 @@ public class CrowdController : MonoBehaviour
 			{
 				if (Vector2.Distance(spawnVector, pos) < distanceBeetwenEvents)
 				{
-					Debug.Log("Too close: " + Vector2.Distance(spawnVector, pos));
 					tooClose = true;
 					break;
 				}

@@ -44,7 +44,7 @@ public class EventController : MonoBehaviour
     {
         foreach (ManControl man in people)
         {
-            man.walking = true;
+            man.Walking = true;
         }
         GameManager.Instance.Points += people.Count;
         CrowdController.Instance.CloseEvent(transform.position);
