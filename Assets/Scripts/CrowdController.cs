@@ -77,7 +77,8 @@ public class CrowdController : MonoBehaviour
 			lastIndexesGirl.Add(100);
 		}
 
-		timer = eventTimer = 0;
+		timer = spawnTime + 10;
+		eventTimer = eventSpawnTime + 10;
 		left = right = 0;
 		activeEvents = 0; 
 		guyIndex = girlIndex = 0;
