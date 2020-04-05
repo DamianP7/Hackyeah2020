@@ -17,6 +17,7 @@ public class CrowdController : MonoBehaviour
 
 	[Header("People")]
 	public PeopleLook peopleLook;
+	public int girlsInScriptableObject;
 	public GameObject[] prefabs;
 	public List<ManControl> people;
 	public float manSize;
@@ -50,7 +51,8 @@ public class CrowdController : MonoBehaviour
 	List<EventController> events;
 	List<int> lastIndexesGuy;
 	List<int> lastIndexesGirl;
-	int index = 0;
+	int guyIndex = 0;
+	int girlIndex = 0;
 
 	private void Awake()
 	{
@@ -63,21 +65,16 @@ public class CrowdController : MonoBehaviour
 		eventPositions = new List<Vector2>();
 		events = new List<EventController>();
 		lastIndexesGuy = new List<int>();
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
-		lastIndexesGuy.Add(100);
+		for (int i = 0; i < peopleLook.people.Count - girlsInScriptableObject - 1; i++)
+		{
+			lastIndexesGuy.Add(100);
+		}
 
 		lastIndexesGirl = new List<int>();
-		lastIndexesGirl.Add(100);
-		lastIndexesGirl.Add(100);
-		lastIndexesGirl.Add(100);
-		lastIndexesGirl.Add(100);
-		lastIndexesGirl.Add(100);
+		for (int i = 0; i < girlsInScriptableObject - 1; i++)
+		{
+			lastIndexesGirl.Add(100);
+		}
 
 		timer = eventTimer = 0;
 		left = right = 0;
@@ -167,6 +164,8 @@ public class CrowdController : MonoBehaviour
 			{
 				look = Random.Range(min, max);
 			} while (lastIndexesGirl.Contains(look));
+			lastIndexesGirl[girlIndex % lastIndexesGirl.Count] = look;
+			girlIndex++;
 		}
 		else
 		{
@@ -176,8 +175,9 @@ public class CrowdController : MonoBehaviour
 			{
 				look = Random.Range(min, max);
 			} while (lastIndexesGuy.Contains(look));
+			lastIndexesGuy[guyIndex % lastIndexesGuy.Count] = look;
+			guyIndex++;
 		}
-		lastIndexesGuy[index % lastIndexesGuy.Count] = look;
 		newMan.Initialize(startVector, endVector, direction, peopleLook.people[look]);
 	}
 

@@ -78,7 +78,6 @@ public class ManControl : MonoBehaviour
 				sideSpeed.y = -horizontalSpeed;
 			Vector3 newPos = transform.position + sideSpeed;
 			newPos.z = newPos.y;
-			Debug.Log(newPos.y + "; " + (yPosDestination + sideSpeed.y * 6) + "; " + (yPosDestination - sideSpeed.y * 6));
 			if (transform.position.y > yPosDestination + sideSpeed.y * 6
 				&& transform.position.y < yPosDestination - sideSpeed.y * 6)
 			{

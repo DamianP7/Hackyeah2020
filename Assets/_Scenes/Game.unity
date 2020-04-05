@@ -4935,6 +4935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   peopleLook: {fileID: 11400000, guid: 02267e370c9f4064c813f5912ee8e97e, type: 2}
+  girlsInScriptableObject: 5
   prefabs:
   - {fileID: 5442554695802424396, guid: 211b425287deb2343bec90ec4da7097c, type: 3}
   - {fileID: 3713589930871714728, guid: 2f3410c4464ee1c48a294d5fa45f1e01, type: 3}
