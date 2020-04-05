@@ -155,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5325633324248772796}
   - component: {fileID: 3566359830602031237}
+  - component: {fileID: 3069525421219920287}
   m_Layer: 0
   m_Name: Characters_guy1_legRight
   m_TagString: Untagged
@@ -174,7 +175,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 5185017277507584357}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3566359830602031237
 SpriteRenderer:
@@ -214,7 +215,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2499558952833973110, guid: af088148637255144bc2e2003bb1af99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -226,7 +227,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!210 &3069525421219920287
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2211851094709779905}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
 --- !u!1 &2614063296295434651
 GameObject:
   m_ObjectHideFlags: 0
@@ -237,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7199526832667047572}
   - component: {fileID: 7565455972679648570}
+  - component: {fileID: 6691595575551790191}
   m_Layer: 0
   m_Name: Characters_guy1
   m_TagString: Untagged
@@ -252,13 +265,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2614063296295434651}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 9210439871013723970}
   - {fileID: 7699383921697301227}
   m_Father: {fileID: 5185017277507584357}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7565455972679648570
 SpriteRenderer:
@@ -298,7 +311,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
+  m_SortingOrder: 0
   m_Sprite: {fileID: 7480639098082073457, guid: af088148637255144bc2e2003bb1af99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -310,7 +323,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!210 &6691595575551790191
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2614063296295434651}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
 --- !u!1 &5295567257410625272
 GameObject:
   m_ObjectHideFlags: 0
@@ -321,6 +345,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7359873118993122511}
   - component: {fileID: 2685044680070953511}
+  - component: {fileID: 4345150758548307490}
   m_Layer: 0
   m_Name: Characters_guy1_legLeft
   m_TagString: Untagged
@@ -340,7 +365,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 5185017277507584357}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2685044680070953511
 SpriteRenderer:
@@ -380,7 +405,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -2499558952833973110, guid: af088148637255144bc2e2003bb1af99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -392,7 +417,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!210 &4345150758548307490
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5295567257410625272}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1
 --- !u!1 &5343175122642364697
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,9 +457,9 @@ Transform:
   m_LocalPosition: {x: 0.1, y: 0.3, z: 0}
   m_LocalScale: {x: 0.43006, y: 0.43006, z: 0.43006}
   m_Children:
-  - {fileID: 7199526832667047572}
   - {fileID: 7359873118993122511}
   - {fileID: 5325633324248772796}
+  - {fileID: 7199526832667047572}
   m_Father: {fileID: 4532035539241217749}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -541,6 +577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7699383921697301227}
   - component: {fileID: 1248836510716883575}
+  - component: {fileID: 8189333563318404435}
   m_Layer: 0
   m_Name: Characters_guy1_armVisible
   m_TagString: Untagged
@@ -556,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5484539505197526336}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.6799998, y: -0.62, z: 0}
+  m_LocalPosition: {x: -0.6799998, y: -0.62, z: -0.2}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 7199526832667047572}
@@ -600,7 +637,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 7
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1960546628078278901, guid: af088148637255144bc2e2003bb1af99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -612,7 +649,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!210 &8189333563318404435
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5484539505197526336}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
 --- !u!1 &7855944561544573152
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,6 +939,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9210439871013723970}
   - component: {fileID: 6086129228011924592}
+  - component: {fileID: 1010316097516767677}
   m_Layer: 0
   m_Name: Characters_guy1_armHidden
   m_TagString: Untagged
@@ -906,7 +955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8977113477310604148}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4100001, y: -0.62, z: 5}
+  m_LocalPosition: {x: 0.4100001, y: -0.62, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children: []
   m_Father: {fileID: 7199526832667047572}
@@ -950,7 +999,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1960546628078278901, guid: af088148637255144bc2e2003bb1af99,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -962,4 +1011,15 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  m_SpriteSortPoint: 1
+--- !u!210 &1010316097516767677
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8977113477310604148}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: -1

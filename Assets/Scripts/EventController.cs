@@ -13,7 +13,9 @@ public class EventController : MonoBehaviour
 
     float time;
     int number;
+    bool start = false;
     List<ManControl> people;
+    List<bool> started;
 
     public void Initialize()
     {
@@ -23,6 +25,7 @@ public class EventController : MonoBehaviour
         number = 0;
         time = 0;
         people = new List<ManControl>();
+        started = new List<bool>();
     }
 
     public void JoinEvent(ManControl man)
@@ -31,13 +34,35 @@ public class EventController : MonoBehaviour
         number++;
     }
 
+    public void CanStart()
+    {
+        started.Add(true);
+        if(started.Count >= requiedNumber)
+        {
+            Debug.Log("Animation");
+            foreach (ManControl item in people)
+            {
+                item.EventAnimationStart();
+            }
+            start = true;
+        }
+    }
+
 
     public void Update()
     {
-        if(number >= requiedNumber)
+        if(start == true)
         {
             time += Time.deltaTime;
-            // animation
+            if(time > duration)
+            {
+                foreach (ManControl man in people)
+                {
+                    man.Walking = true;
+                }
+                CrowdController.Instance.CloseEvent(transform.position);
+                Destroy(this.gameObject);
+            }
         }
     }
 

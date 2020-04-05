@@ -26,6 +26,7 @@ public class ManControl : MonoBehaviour
 	Vector3 sideSpeed = Vector3.zero;
 	float yPosDestination;
 	EventType actualEvent;
+	EventController eventController;
 
 	private bool sideWalking = false;
 	private bool walking = false;
@@ -83,7 +84,8 @@ public class ManControl : MonoBehaviour
 			{
 				sideWalking = false;
 				newPos.y = yPosDestination;
-				EventAnimationStart();
+				animator.SetTrigger("Idle");
+				eventController.CanStart();
 			}
 			transform.position = newPos;
 		}
@@ -100,20 +102,22 @@ public class ManControl : MonoBehaviour
 		//speed = 0.01272
 	}
 
-	public void OnEventEnter(Vector2 place, EventType eventType)
+	public void OnEventEnter(Vector2 place, EventController eventController)
 	{
+		this.eventController = eventController;
 		Debug.Log("OnEventEnter)");
 		yPosDestination = place.y;
 		float dir = transform.position.y - place.y;
 		Debug.Log(dir);
 
-		actualEvent = eventType;
+		actualEvent = eventController.eventType;
 		walking = false;
 
 		if (dir < 0.01f && dir > -0.01f)
 		{
 			transform.position = new Vector3(transform.position.x, yPosDestination, yPosDestination);
-			EventAnimationStart();
+			animator.SetTrigger("Idle");
+			eventController.CanStart();
 		}
 		else
 		{
@@ -126,21 +130,21 @@ public class ManControl : MonoBehaviour
 
 	}
 
-	void EventAnimationStart()
+	public void EventAnimationStart()
 	{
 		switch (actualEvent)
 		{
 			case EventType.Talking:
-				animator.SetTrigger("Idle");
+				animator.SetTrigger("Handshake");
 				break;
 			case EventType.Handshake:
-				animator.SetTrigger("Idle");
+				animator.SetTrigger("Handshake");
 				break;
 			case EventType.Hug:
-				animator.SetTrigger("Idle");
+				animator.SetTrigger("Handshake");
 				break;
 			case EventType.Group:
-				animator.SetTrigger("Idle");
+				animator.SetTrigger("Handshake");
 				break;
 		}
 	}

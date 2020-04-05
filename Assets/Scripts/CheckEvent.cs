@@ -15,7 +15,7 @@ public class CheckEvent : MonoBehaviour
 			if (id == collider.id)
 			{
 				collider.AddMan(man);
-				man.OnEventEnter(collider.transform.position, collider.eventType);
+				man.OnEventEnter(collider.transform.position, collider.eventController);
 			}	
 		}
 	}

@@ -47,23 +47,38 @@ public class CrowdController : MonoBehaviour
 	int eventId = 1;
 	int activeEvents;
 	List<Vector2> eventPositions;
-	List<int> lastIndexes;
+	List<EventController> events;
+	List<int> lastIndexesGuy;
+	List<int> lastIndexesGirl;
 	int index = 0;
 
 	private void Awake()
 	{
-		people = new List<ManControl>();
-		eventPositions = new List<Vector2>();
-		lastIndexes = new List<int>();
-		lastIndexes.Add(100);
-		lastIndexes.Add(100);
-		lastIndexes.Add(100);
-		lastIndexes.Add(100);
-		lastIndexes.Add(100);
+		Setup();
 	}
 
-	private void Start()
+	private void Setup()
 	{
+		people = new List<ManControl>();
+		eventPositions = new List<Vector2>();
+		events = new List<EventController>();
+		lastIndexesGuy = new List<int>();
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+		lastIndexesGuy.Add(100);
+
+		lastIndexesGirl = new List<int>();
+		lastIndexesGirl.Add(100);
+		lastIndexesGirl.Add(100);
+		lastIndexesGirl.Add(100);
+		lastIndexesGirl.Add(100);
+		lastIndexesGirl.Add(100);
+
 		timer = eventTimer = 0;
 		left = right = 0;
 		activeEvents = 0;
@@ -71,6 +86,23 @@ public class CrowdController : MonoBehaviour
 		spawnPosRight = spawnRight.position;
 		spawnPosTop = spawnTopPoint.position.y;
 		spawnPosBottom = spawnBottomPoint.position.y;
+	}
+
+	private void OnEnable()
+	{
+		Setup();
+	}
+
+	private void OnDisable()
+	{
+		for (int i = people.Count - 1; i >= 0; i--)
+		{
+			Destroy(people[i].gameObject);
+		}
+		for (int i = people.Count - 1; i >= 0; i--)
+		{
+			Destroy(people[i].gameObject);
+		}
 	}
 
 	private void Update()
@@ -131,17 +163,21 @@ public class CrowdController : MonoBehaviour
 		{
 			min = 0;
 			max = 5;
+			do
+			{
+				look = Random.Range(min, max);
+			} while (lastIndexesGirl.Contains(look));
 		}
 		else
 		{
 			min = 5;
 			max = peopleLook.people.Count;
+			do
+			{
+				look = Random.Range(min, max);
+			} while (lastIndexesGuy.Contains(look));
 		}
-		do
-		{
-			look = Random.Range(min, max);
-		} while (lastIndexes.Contains(look));
-		lastIndexes[index % lastIndexes.Count] = look;
+		lastIndexesGuy[index % lastIndexesGuy.Count] = look;
 		newMan.Initialize(startVector, endVector, direction, peopleLook.people[look]);
 	}
 
