@@ -11,7 +11,10 @@ public class CheckCollider : MonoBehaviour
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.tag == "SpawnPoint")
+		{
+			CrowdController.Instance.people.Remove(man);
 			Destroy(man.gameObject);
+		}
 		else if (collision.tag == "CheckRoad")
 		{
 			CheckCollider col = collision.GetComponent<CheckCollider>();

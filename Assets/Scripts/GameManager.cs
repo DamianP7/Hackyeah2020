@@ -16,8 +16,13 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public int gameTime;
+
 	[SerializeField] Text pointsText;
+	[SerializeField] Text timeText;
+	[SerializeField] Color goodTime, endOfTime;
 	[SerializeField] CrowdController crowdController;
+	[SerializeField] TutorialController tutorialController;
 
 	public int Points
 	{
@@ -28,15 +33,47 @@ public class GameManager : MonoBehaviour
 			pointsText.text = points.ToString();
 		}
 	}
+
+	public float Timer
+	{
+		get => timer;
+		set
+		{
+			timer = value;
+			timeText.text = Mathf.CeilToInt(timer).ToString();
+			timeText.color = Mathf.CeilToInt(timer) > 5 ? goodTime : endOfTime;
+		}
+	}
+
 	int points;
+	float timer;
+	bool started;
 
 	private void Start()
 	{
 		Points = 0;
+		Timer = gameTime;
 	}
 
 	public void StartGame()
 	{
 		crowdController.gameObject.SetActive(true);
+		Points = 0;
+		Timer = gameTime;
+		started = true;
+	}
+
+	private void Update()
+	{
+		if (started)
+		{
+			Timer -= Time.deltaTime;
+			if (timer <= 0)
+			{
+				started = false;
+				crowdController.gameObject.SetActive(false);
+				tutorialController.gameObject.SetActive(true);
+			}
+		}
 	}
 }

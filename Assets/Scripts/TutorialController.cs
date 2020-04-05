@@ -13,6 +13,21 @@ public class TutorialController : MonoBehaviour
 
 	private void Awake()
 	{
+		Open();
+	}
+
+	private void OnEnable()
+	{
+		Open();
+	}
+
+	public void Open()
+	{
+		index = 0;
+		for (int i = 0; i < windows.Length; i++)
+		{
+			windows[i].gameObject.SetActive(i == index);
+		}
 		if (index == windows.Length - 1)
 			nextButton.SetActive(false);
 

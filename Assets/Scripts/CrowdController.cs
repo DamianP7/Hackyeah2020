@@ -65,6 +65,7 @@ public class CrowdController : MonoBehaviour
 		eventPositions = new List<Vector2>();
 		events = new List<EventController>();
 		lastIndexesGuy = new List<int>();
+		lastIndexesGirl = new List<int>();
 		for (int i = 0; i < peopleLook.people.Count - girlsInScriptableObject - 1; i++)
 		{
 			lastIndexesGuy.Add(100);
@@ -78,7 +79,8 @@ public class CrowdController : MonoBehaviour
 
 		timer = eventTimer = 0;
 		left = right = 0;
-		activeEvents = 0;
+		activeEvents = 0; 
+		guyIndex = girlIndex = 0;
 		spawnPosLeft = spawnLeft.position;
 		spawnPosRight = spawnRight.position;
 		spawnPosTop = spawnTopPoint.position.y;
@@ -94,11 +96,13 @@ public class CrowdController : MonoBehaviour
 	{
 		for (int i = people.Count - 1; i >= 0; i--)
 		{
-			Destroy(people[i].gameObject);
+			if(people[i] != null)
+				Destroy(people[i].gameObject);
 		}
-		for (int i = people.Count - 1; i >= 0; i--)
+		for (int i = events.Count - 1; i >= 0; i--)
 		{
-			Destroy(people[i].gameObject);
+			if(events[i] != null)
+				Destroy(events[i].gameObject);
 		}
 	}
 
@@ -179,6 +183,7 @@ public class CrowdController : MonoBehaviour
 			guyIndex++;
 		}
 		newMan.Initialize(startVector, endVector, direction, peopleLook.people[look]);
+		people.Add(newMan);
 	}
 
 	void SpawnEvent()
@@ -208,6 +213,7 @@ public class CrowdController : MonoBehaviour
 		newEvent.eventId = eventId++;
 		newEvent.Initialize();
 
+		events.Add(newEvent);
 		eventPositions.Add(spawnVector);
 		activeEvents++;
 	}
