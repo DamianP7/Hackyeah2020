@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
 	[SerializeField] Color goodTime, endOfTime;
 	[SerializeField] CrowdController crowdController;
 	[SerializeField] TutorialController tutorialController;
+	[SerializeField] Animator timeOver;
 
 	public int Points
 	{
@@ -61,6 +62,7 @@ public class GameManager : MonoBehaviour
 		Points = 0;
 		Timer = gameTime;
 		started = true;
+		timeOver.gameObject.SetActive(false);
 	}
 
 	private void Update()
@@ -73,6 +75,8 @@ public class GameManager : MonoBehaviour
 				started = false;
 				crowdController.gameObject.SetActive(false);
 				tutorialController.gameObject.SetActive(true);
+				timeOver.gameObject.SetActive(true);
+				timeOver.SetTrigger("Show");
 			}
 		}
 	}
